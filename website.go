@@ -1,9 +1,10 @@
 package igdb
 
 import (
+	"strconv"
+
 	"github.com/Henry-Sarabia/sliceconv"
 	"github.com/pkg/errors"
-	"strconv"
 )
 
 //go:generate gomodifytags -file $GOFILE -struct Website -add-tags json -w
@@ -13,6 +14,7 @@ import (
 type Website struct {
 	ID       int             `json:"id"`
 	Category WebsiteCategory `json:"category"`
+	Game     int             `json:"game"`
 	Trusted  bool            `json:"trusted"`
 	URL      string          `json:"url"`
 }
